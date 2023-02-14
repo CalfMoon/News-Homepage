@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
+
 :root {
     --soft-orange: hsl(35, 77%, 62%);
     --soft-red: hsl(5, 85%, 63%);
@@ -17,7 +18,7 @@
 }
 
 p {
-    line-height: 1.5rem;
+    line-height: 1.5em;
 }
 
 
@@ -50,17 +51,30 @@ header {
     padding-bottom: 1rem;
 }
 
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+
 nav {
     display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.nav__nav {
+    display: flex;
     gap: 2.7rem;
+    list-style: none;
 }
 
-.nav__item {
-    color: var(--dark-grayish-blue);
+.nav__item__link {
     text-decoration: none;
+    color: var(--dark-grayish-blue);
 }
 
-.nav__item:hover {
+.nav__item__link:hover {
     color: var(--soft-orange);
 }
 
@@ -78,11 +92,11 @@ main {
 .news-box--1__heading {
     font-weight: 800;
     font-size: 3.8rem;
-    line-height: 3.8rem;
 }
 
 .news-box--1__content {
     color: var(--dark-grayish-blue);
+    position: relative;
 }
 
 .news-box--1__content__button {
@@ -95,7 +109,6 @@ main {
     padding-bottom: 1rem;
     padding-left: 1.8rem;
     padding-right: 1.8rem;
-    margin-top: 2rem;
 }
 
 .news-box--1__content__button:hover {
@@ -181,13 +194,25 @@ main {
     color: var(--dark-grayish-blue);
 }
 
-@media screen and (orientation:landscape) {
+@media screen and (min-width:721px) {
+
+    .mobile-nav-on__button,
+    .mobile-nav-off__button {
+        display: none;
+    }
+
     main {
         grid-template-columns: 13fr 6.2fr;
     }
 
     .news-box--1 {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .news-box--1__content__button {
+        position: absolute;
+        bottom: 0;
     }
 
     .news-box--1__image {
@@ -198,13 +223,41 @@ main {
         flex-direction: row;
         grid-column: span 2;
     }
+
 }
 
-@media screen and (orientation:portrait) {
-    .desktop-nav {
+@media screen and (max-width:720px) {
+    .mobile-nav-toggle:checked~nav {
         display: none;
     }
 
+    nav {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: var(--off-white);
+        height: 100vh;
+        width: 70vw;
+        padding: 1.8rem;
+        z-index: 1;
+    }
+
+    .mobile-nav-off__button {
+        align-self: flex-end;
+    }
+
+    .nav__nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav__item__link {
+        color: black;
+    }
+
+    .news-box--1__content__button {
+        margin-top: 2rem;
+    }
 
     .news-box--3 {
         flex-direction: column;
