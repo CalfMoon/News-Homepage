@@ -26,6 +26,10 @@ img {
     max-width: 100%;
 }
 
+button {
+    border: 0;
+}
+
 html {
     min-height: 100dvh;
     display: flex;
@@ -51,17 +55,6 @@ header {
     padding-bottom: 1rem;
 }
 
-
-.mobile-nav-toggle {
-    display: none;
-}
-
-
-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-}
 
 .nav__nav {
     display: flex;
@@ -195,12 +188,6 @@ main {
 }
 
 @media screen and (min-width:721px) {
-
-    .mobile-nav-on__button,
-    .mobile-nav-off__button {
-        display: none;
-    }
-
     main {
         grid-template-columns: 13fr 6.2fr;
     }
@@ -226,29 +213,62 @@ main {
 
 }
 
+.nav-toggle {
+    display: none;
+}
+
+.nav-off-button,
+.nav-on-button {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    z-index: 2;
+}
+
+nav {
+    z-index: 1;
+}
+
 @media screen and (max-width:720px) {
-    .mobile-nav-toggle:checked~nav {
+    .nav-toggle:checked~nav {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-off-button {
         display: none;
     }
 
-    nav {
-        position: absolute;
-        right: 0;
-        top: 0;
-        background-color: var(--off-white);
-        height: 100vh;
-        width: 70vw;
-        padding: 1.8rem;
-        z-index: 1;
+    .nav-on-button {
+        display: block;
     }
 
-    .mobile-nav-off__button {
-        align-self: flex-end;
+    .nav-toggle:checked~nav .nav-on-button {
+        display: none;
+    }
+
+    .nav-toggle:checked~nav .nav-off-button {
+        display: block;
     }
 
     .nav__nav {
+        display: none;
         flex-direction: column;
-        gap: 1rem;
+        background-color: var(--off-white);
+        height: 100%;
+        width: 50%;
+        padding: 2rem;
+        padding-top: 10rem;
+    }
+
+
+    .nav-toggle:checked~nav .nav__nav {
+        display: flex;
     }
 
     .nav__item__link {

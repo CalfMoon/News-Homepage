@@ -14,9 +14,12 @@
 <body>
     <header>
         <img src="images/logo.svg" alt="">
-        <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
-            <label type="button" class="mobile-nav-off__button" for="mobile-nav-toggle">
+            <label type="button" class="nav-on-button" for="nav-toggle">
+                <img src="images/icon-menu.svg" alt="">
+            </label>
+            <label type="button" class="nav-off-button" for="nav-toggle">
                 <img src="images/icon-menu-close.svg" alt="">
             </label>
             <ul class="nav__nav">
@@ -27,9 +30,6 @@
                 <li class="nav__item"><a href="" class="nav__item__link">Categories</a></li>
             </ul>
         </nav>
-        <label type="button" class="mobile-nav-on__button" for="mobile-nav-toggle">
-            <img src="images/icon-menu.svg" alt="menu">
-        </label>
     </header>
     <main>
         <article class="news-box news-box--1">
