@@ -18,7 +18,7 @@
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.8em;
 }
 
 
@@ -28,6 +28,7 @@ img {
 
 button {
     border: 0;
+    background: transparent;
 }
 
 html {
@@ -228,6 +229,8 @@ main {
 
 nav {
     z-index: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 @media screen and (max-width:720px) {
@@ -263,7 +266,8 @@ nav {
         height: 100%;
         width: 50%;
         padding: 2rem;
-        padding-top: 10rem;
+        padding-top: 9rem;
+        gap: 1.5rem;
     }
 
 
