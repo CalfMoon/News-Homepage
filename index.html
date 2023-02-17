@@ -14,17 +14,15 @@
 <body>
     <header>
         <img src="images/logo.svg" alt="company logo; a W">
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-controls="nav__nav">
         <nav>
-            <label type="button" class="nav-on-button" for="nav-toggle">
-                <!-- <button type="button"> -->
+            <label type="button" class="nav-on-label nav-toggle-label" for="nav-toggle">
                 <img src="images/icon-menu.svg" alt=" menu open icon; hamburger">
-                <!-- </button> -->
             </label>
-            <label type="button" class="nav-off-button" for="nav-toggle">
+            <label type="button" class="nav-off-label nav-toggle-label" for="nav-toggle">
                 <img src="images/icon-menu-close.svg" alt="menu close icon; X">
             </label>
-            <ul class="nav__nav">
+            <ul class="nav__nav" id="nav__nav">
                 <li class="nav__item"><a href="#" class="nav__item__link">Home</a></li>
                 <li class="nav__item"><a href="#" class="nav__item__link">New</a></li>
                 <li class="nav__item"><a href="#" class="nav__item__link">Popular</a></li>

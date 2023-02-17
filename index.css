@@ -10,7 +10,6 @@
     --very-dark-blue: hsl(240, 100%, 5%);
 }
 
-
 * {
     margin: 0;
     border: 0;
@@ -188,6 +187,7 @@ main {
     color: var(--dark-grayish-blue);
 }
 
+/* for desktop */
 @media screen and (min-width:721px) {
     main {
         grid-template-columns: 13fr 6.2fr;
@@ -211,15 +211,15 @@ main {
         flex-direction: row;
         grid-column: span 2;
     }
-
 }
 
+/* for mobile but works in desktop too  */
+/* 24 */
 .nav-toggle {
     display: none;
 }
 
-.nav-off-button,
-.nav-on-button {
+.nav-toggle-label {
     display: none;
     position: absolute;
     top: 2rem;
@@ -233,7 +233,19 @@ nav {
     justify-content: flex-end;
 }
 
+/* for mobile */
 @media screen and (max-width:720px) {
+
+    /* for accessibility */
+    /* hides the checkbox without display none so it can be tabbed over */
+    /* 6 */
+    .nav-toggle {
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+        display: inline-block;
+    }
+
     .nav-toggle:checked~nav {
         position: fixed;
         right: 0;
@@ -243,19 +255,19 @@ nav {
         background-color: rgba(0, 0, 0, 0.6);
     }
 
-    .nav-off-button {
+    .nav-off-label {
         display: none;
     }
 
-    .nav-on-button {
+    .nav-on-label {
         display: block;
     }
 
-    .nav-toggle:checked~nav .nav-on-button {
+    .nav-toggle:checked~nav .nav-on-label {
         display: none;
     }
 
-    .nav-toggle:checked~nav .nav-off-button {
+    .nav-toggle:checked~nav .nav-off-label {
         display: block;
     }
 
@@ -269,7 +281,6 @@ nav {
         padding-top: 9rem;
         gap: 1.5rem;
     }
-
 
     .nav-toggle:checked~nav .nav__nav {
         display: flex;
