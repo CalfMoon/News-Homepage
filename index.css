@@ -22,7 +22,7 @@
 }
 
 p {
-    line-height: 1.8em;
+    line-height: 1.6em;
 }
 
 
@@ -63,12 +63,13 @@ header {
 
 .nav__nav {
     display: flex;
-    gap: 2.7rem;
+    gap: 2.9rem;
     list-style: none;
 }
 
 .nav__item__link {
     text-decoration: none;
+    font-size: 1.05rem;
     color: var(--dark-grayish-blue);
 }
 
@@ -91,6 +92,7 @@ main {
 .news-box--1__heading {
     font-weight: 800;
     font-size: 3.8rem;
+    line-height: 1em;
 }
 
 .news-box--1__content {
@@ -103,11 +105,11 @@ main {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
-    font-weight: 700;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
+    font-weight: 800;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
 
 .news-box--1__content__button:hover,
@@ -176,13 +178,18 @@ main {
 
 .news-box--3__item__text {
     display: grid;
-    gap: 0.8rem;
+    gap: 0rem;
 }
 
 .news-box--3__item__text__number {
     color: var(--grayish-blue);
     font-weight: 700;
     font-size: 2rem;
+}
+
+.news-box--3__item__text__title{
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 .news-box--3__item__text__title:hover {
@@ -216,6 +223,10 @@ main {
     .news-box--3 {
         flex-direction: row;
         grid-column: span 2;
+    }
+
+    .news-box--3__item__text{
+	
     }
 
 }
