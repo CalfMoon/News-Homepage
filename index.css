@@ -73,8 +73,7 @@ header {
     color: var(--dark-grayish-blue);
 }
 
-.nav__item__link:hover,
-.nav__item__link:focus {
+.nav__item__link:hover, .nav__item__link:focus {
     color: var(--soft-orange);
 }
 
@@ -112,8 +111,7 @@ main {
     padding-right: 2.5rem;
 }
 
-.news-box--1__content__button:hover,
-.news-box--1__content__button:focus {
+.news-box--1__content__button:hover, .news-box--1__content__button:focus {
     background-color: var(--very-dark-blue);
     cursor: pointer;
 }
@@ -152,7 +150,6 @@ main {
 .news-box--2__item__content {
     color: var(--grayish-blue);
 }
-
 
 .news-box--2__sepration-line {
     background-color: var(--grayish-blue);
